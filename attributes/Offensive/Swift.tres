@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=6 format=3 uid="uid://cu8gpr2dknk1h"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_bh2yg"]
+[ext_resource type="Resource" uid="uid://br7u7iktmj1ww" path="res://cards/LightAttack.tres" id="2_k6cbk"]
+[ext_resource type="Resource" uid="uid://cmjq0cqoid50j" path="res://cards/HeavyAttack.tres" id="3_qgg2n"]
+[ext_resource type="Resource" uid="uid://c1r3es0sjtnp" path="res://cards/Dodge.tres" id="4_vk1vb"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="5_eoqdy"]
+
+[resource]
+script = ExtResource("5_eoqdy")
+name = "Swift"
+is_offensive_type = true
+cards_data = Array[ExtResource("1_bh2yg")]([ExtResource("2_k6cbk"), ExtResource("2_k6cbk"), ExtResource("2_k6cbk"), ExtResource("2_k6cbk"), ExtResource("2_k6cbk"), ExtResource("2_k6cbk"), ExtResource("3_qgg2n"), ExtResource("3_qgg2n"), ExtResource("4_vk1vb")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"

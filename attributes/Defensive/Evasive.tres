@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=6 format=3 uid="uid://crprxpktqqu72"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_uevgl"]
+[ext_resource type="Resource" uid="uid://dvmmlc16mdaw1" path="res://cards/Block.tres" id="2_o6x2s"]
+[ext_resource type="Resource" uid="uid://c1r3es0sjtnp" path="res://cards/Dodge.tres" id="3_8e3eq"]
+[ext_resource type="Resource" uid="uid://cytxcgtrvl6js" path="res://cards/Counter.tres" id="4_io60s"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="5_5kejd"]
+
+[resource]
+script = ExtResource("5_5kejd")
+name = "Evasive"
+is_offensive_type = false
+cards_data = Array[ExtResource("1_uevgl")]([ExtResource("2_o6x2s"), ExtResource("2_o6x2s"), ExtResource("4_io60s"), ExtResource("4_io60s"), ExtResource("3_8e3eq"), ExtResource("3_8e3eq")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"

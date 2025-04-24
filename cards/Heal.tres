@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cifcmqr6pitao"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_bras5"]
+[ext_resource type="Texture2D" uid="uid://drnpi2xs23yeu" path="res://assets/heal.png" id="2_hwfnt"]
+
+[resource]
+script = ExtResource("1_bras5")
+name = "Heal"
+type = "Action"
+texture = ExtResource("2_hwfnt")
+effect = "Restore 2 Health points. You may play multiple HEAL cards in a single action."
+power_up = "Heal +2 damage"
+damage = -2
+power_up_damage = -2
+multi = true
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

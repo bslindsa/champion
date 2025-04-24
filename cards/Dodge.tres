@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://c1r3es0sjtnp"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_hqhp8"]
+[ext_resource type="Texture2D" uid="uid://vttk8akbu3j0" path="res://assets/running.png" id="2_5r33g"]
+
+[resource]
+script = ExtResource("1_hqhp8")
+name = "Dodge"
+type = "Reaction"
+texture = ExtResource("2_5r33g")
+effect = "Negate all damage dealt by a HEAVY ATTACK. Use 1 action immediately."
+power_up = "Deal +1 damage"
+damage = 0
+power_up_damage = -1
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

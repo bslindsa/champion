@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cmjq0cqoid50j"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_pgpgq"]
+[ext_resource type="Texture2D" uid="uid://c2pl2i28d0l0y" path="res://assets/battle-axe.png" id="2_jdnq1"]
+
+[resource]
+script = ExtResource("1_pgpgq")
+name = "Heavy Attack"
+type = "ACTION"
+texture = ExtResource("2_jdnq1")
+effect = "Deal 4 damage"
+power_up = "Deal +2 damage"
+damage = 4
+power_up_damage = 2
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

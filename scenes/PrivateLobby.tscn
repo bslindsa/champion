@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvf0buocco7cq"]
+
+[ext_resource type="Script" uid="uid://dxvwduy8g64e6" path="res://scenes/WebSocketClient.gd" id="1_5yh7h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_berql"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="PrivateLobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5yh7h")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_berql")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Host's Lobby"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Lobby Message"
+horizontal_alignment = 1
+
+[node name="LobbyID" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+text = "Lobby ID"
+horizontal_alignment = 1

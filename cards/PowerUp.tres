@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bvy0rtxm1e0c6"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_x41gg"]
+[ext_resource type="Texture2D" uid="uid://v1dtlfj4jped" path="res://assets/fire.png" id="2_hlv12"]
+
+[resource]
+script = ExtResource("1_x41gg")
+name = "Power Up"
+type = "Free"
+texture = ExtResource("2_hlv12")
+effect = "Activate power up effects of all following cards played by this Champion this turn. Power ups can stack."
+power_up = ""
+damage = 0
+power_up_damage = 0
+multi = true
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

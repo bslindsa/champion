@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=5 format=3 uid="uid://csohc20oo8m3b"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_sras6"]
+[ext_resource type="Resource" uid="uid://cytxcgtrvl6js" path="res://cards/Counter.tres" id="2_sras6"]
+[ext_resource type="Resource" uid="uid://cifcmqr6pitao" path="res://cards/Heal.tres" id="3_cm70l"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="4_hggmq"]
+
+[resource]
+script = ExtResource("4_hggmq")
+name = "Reactive"
+is_offensive_type = false
+cards_data = Array[ExtResource("1_sras6")]([ExtResource("2_sras6"), ExtResource("2_sras6"), ExtResource("2_sras6"), ExtResource("3_cm70l"), ExtResource("3_cm70l"), ExtResource("3_cm70l")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"

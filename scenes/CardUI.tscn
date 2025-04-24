@@ -1,0 +1,174 @@
+[gd_scene load_steps=12 format=3 uid="uid://oxo2pg75cs8l"]
+
+[ext_resource type="Script" uid="uid://c0flow411ni1p" path="res://scenes/CardUI.gd" id="1_068a4"]
+[ext_resource type="Resource" uid="uid://tcs81g5jsk6s" path="res://cards/Energy.tres" id="2_s2oda"]
+[ext_resource type="Texture2D" uid="uid://bnug6hwsa3w12" path="res://assets/elegant-marble-texture-stockcake.jpg" id="3_s2oda"]
+[ext_resource type="Texture2D" uid="uid://7m4pmcqv1ulm" path="res://assets/sword.png" id="4_xj2v5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yk048"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="SystemFont" id="SystemFont_lbg5g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cg3st"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0k2y"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_varyk"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65pnx"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 25
+corner_radius_bottom_right = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbg5g"]
+bg_color = Color(0.74902, 0.772549, 0.4, 0.541176)
+
+[node name="CardUi" type="Control"]
+custom_minimum_size = Vector2(180, 250)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 260.0
+script = ExtResource("1_068a4")
+card_data = ExtResource("2_s2oda")
+
+[node name="CardBorder" type="Panel" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yk048")
+
+[node name="NameLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.066
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_lbg5g")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_cg3st")
+text = "Card Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TypeLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.145
+anchor_right = 0.055
+anchor_bottom = 0.475
+offset_left = 9.0
+offset_top = -0.759998
+offset_right = -1.0
+offset_bottom = -21.56
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0k2y")
+text = "Type"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="EffectLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.53
+anchor_right = 1.0
+anchor_bottom = 0.76
+offset_left = 20.0
+offset_top = -3.05176e-05
+offset_right = -20.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_varyk")
+text = "Effect Description"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PowerUpLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.78
+anchor_right = 1.0
+anchor_bottom = 0.985
+offset_left = 20.0
+offset_top = -3.05176e-05
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_65pnx")
+text = "Power Up"
+horizontal_alignment = 1
+
+[node name="CardArt" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.16
+anchor_right = 0.95
+anchor_bottom = 0.5
+texture = ExtResource("4_xj2v5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Outline" type="Panel" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbg5g")
+
+[node name="CardBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.975
+anchor_bottom = 0.975
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s2oda")
+expand_mode = 1

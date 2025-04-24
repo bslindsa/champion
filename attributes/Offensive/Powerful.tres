@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=6 format=3 uid="uid://copd5dabeyha6"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_56707"]
+[ext_resource type="Resource" uid="uid://br7u7iktmj1ww" path="res://cards/LightAttack.tres" id="2_65me7"]
+[ext_resource type="Resource" uid="uid://cmjq0cqoid50j" path="res://cards/HeavyAttack.tres" id="3_vt8nm"]
+[ext_resource type="Resource" uid="uid://cytxcgtrvl6js" path="res://cards/Counter.tres" id="4_foj34"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="5_8m7ps"]
+
+[resource]
+script = ExtResource("5_8m7ps")
+name = "Powerful"
+is_offensive_type = true
+cards_data = Array[ExtResource("1_56707")]([ExtResource("3_vt8nm"), ExtResource("3_vt8nm"), ExtResource("3_vt8nm"), ExtResource("3_vt8nm"), ExtResource("3_vt8nm"), ExtResource("3_vt8nm"), ExtResource("2_65me7"), ExtResource("2_65me7"), ExtResource("4_foj34")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dvmmlc16mdaw1"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_fwleo"]
+[ext_resource type="Texture2D" uid="uid://bg07nakgl2obo" path="res://assets/shield.png" id="2_ycvm8"]
+
+[resource]
+script = ExtResource("1_fwleo")
+name = "Block"
+type = "Reaction"
+texture = ExtResource("2_ycvm8")
+effect = "Reduce damage taken from an attack card by 2.  You may play multiple BLOCK cards in a single action."
+power_up = "Reduce +2 damage"
+damage = 0
+power_up_damage = 0
+multi = true
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

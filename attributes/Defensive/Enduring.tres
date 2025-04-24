@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=5 format=3 uid="uid://btslp3it7ep6"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_re2yj"]
+[ext_resource type="Resource" uid="uid://dvmmlc16mdaw1" path="res://cards/Block.tres" id="2_re2yj"]
+[ext_resource type="Resource" uid="uid://cifcmqr6pitao" path="res://cards/Heal.tres" id="3_ay06a"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="4_6u7si"]
+
+[resource]
+script = ExtResource("4_6u7si")
+name = "Enduring"
+is_offensive_type = false
+cards_data = Array[ExtResource("1_re2yj")]([ExtResource("3_ay06a"), ExtResource("3_ay06a"), ExtResource("3_ay06a"), ExtResource("3_ay06a"), ExtResource("2_re2yj"), ExtResource("2_re2yj")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"

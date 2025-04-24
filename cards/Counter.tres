@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://cytxcgtrvl6js"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_ll7t8"]
+[ext_resource type="Texture2D" uid="uid://d1qitssf81uik" path="res://assets/counter.png" id="2_bpa0y"]
+
+[resource]
+script = ExtResource("1_ll7t8")
+name = "Counter"
+type = "Reaction"
+texture = ExtResource("2_bpa0y")
+effect = "Negate all damage dealt by a single light attack. Deal 1 damage"
+power_up = "Deal +1 damage"
+damage = 1
+power_up_damage = 1
+multi = false
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

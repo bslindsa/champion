@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://co1cmurqhlvfh"]
+
+[ext_resource type="Script" uid="uid://toofuthhess6" path="res://scenes/Matchmaking.gd" id="1_res1o"]
+[ext_resource type="Texture2D" uid="uid://cjnyth6gdg3c" path="res://assets/sword_spinner.png" id="2_tl1lc"]
+[ext_resource type="Script" uid="uid://dxvwduy8g64e6" path="res://scenes/WebSocketClient.gd" id="3_tl1lc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de70q"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Matchmaking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_res1o")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_de70q")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 87.205
+offset_bottom = 178.205
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 66
+text = "Looking for match..."
+horizontal_alignment = 1
+
+[node name="CancelButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.5
+offset_top = -165.71
+offset_right = 53.5
+offset_bottom = -113.71
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 31
+text = "Cancel"
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -112.5
+offset_right = 112.5
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(112.5, 112.5)
+texture = ExtResource("2_tl1lc")
+
+[node name="WebSocketClient" type="Node" parent="."]
+script = ExtResource("3_tl1lc")
+metadata/_custom_type_script = "uid://dxvwduy8g64e6"
+
+[connection signal="pressed" from="Panel/CancelButton" to="." method="_on_cancel_button_pressed"]

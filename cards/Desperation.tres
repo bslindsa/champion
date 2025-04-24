@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpex0dmr2pfhw"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_exl8a"]
+[ext_resource type="Texture2D" uid="uid://tu77680mb2uc" path="res://assets/skull.png" id="2_lqkt8"]
+
+[resource]
+script = ExtResource("1_exl8a")
+name = "Desperation"
+type = "Action"
+texture = ExtResource("2_lqkt8")
+effect = "Deal 4 damage. Opponent immediately uses 1 action. Cannot be blocked or discarded."
+power_up = ""
+damage = 0
+power_up_damage = 0
+metadata/_custom_type_script = "uid://dvpeyq8pdki5n"

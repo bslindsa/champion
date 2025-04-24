@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Attribute" load_steps=5 format=3 uid="uid://c2wcjw0tvakgh"]
+
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="1_vjt7d"]
+[ext_resource type="Resource" uid="uid://c1r3es0sjtnp" path="res://cards/Dodge.tres" id="2_vjt7d"]
+[ext_resource type="Resource" uid="uid://cifcmqr6pitao" path="res://cards/Heal.tres" id="3_lrxf8"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="4_5a846"]
+
+[resource]
+script = ExtResource("4_5a846")
+name = "Perceptive"
+is_offensive_type = false
+cards_data = Array[ExtResource("1_vjt7d")]([ExtResource("2_vjt7d"), ExtResource("2_vjt7d"), ExtResource("2_vjt7d"), ExtResource("3_lrxf8"), ExtResource("3_lrxf8"), ExtResource("3_lrxf8")])
+metadata/_custom_type_script = "uid://dy1712xc1frlt"
