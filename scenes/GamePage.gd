@@ -1,7 +1,6 @@
 extends Control
 
 @export var card_ui_scene = preload("res://scenes/CardUI.tscn")  # Assign `CardUI.tscn`
-@export var attribute_dialog_scene = preload("res://scenes/AttributesDialog.tscn").instantiate()
 @export var card_resources: Array[Card]  # Assign different `.tres` files
 @export var MAX_HAND_SIZE: int
 @export var base_deck: Array[Card]
@@ -11,20 +10,20 @@ extends Control
 @onready var discard_pile = $ChampionField/Discard
 @onready var play_hand_button = $CenterField/VBoxContainer/PlayHandButton
 @onready var discard_button = $CenterField/VBoxContainer/DiscardButton
-@onready var deck = $ChampionField/Deck
-@onready var deck_count = $ChampionField/Deck/DeckCount
+@onready var deck = $ChampionField/DeckContainer/Deck
+@onready var deck_count = $ChampionField/DeckContainer/DeckCount
+@onready var attribute_dialog = $AttributesDialog
 
 var hand = []  # Stores drawn cards
 var discard_pile_tracker = []
 var selected_cards = []  # Tracks the selected card in hand
 
 func _ready():
-	$'.'.add_child(attribute_dialog_scene)
-	attribute_dialog_scene.connect('attributes_selected', Callable(self, 'add_cards_to_deck'))
+	attribute_dialog.connect('attributes_selected', Callable(self, 'add_cards_to_deck'))
 	deck.modulate.a = 0.0
 
 func add_cards_to_deck(cards_data):
-	attribute_dialog_scene.queue_free()
+	attribute_dialog.queue_free()
 	cards_data.append_array(base_deck)
 	if deck.card_resources.is_empty():
 		deck.modulate.a = 1.0
@@ -81,6 +80,8 @@ func select_card(card_instance):
 		else:
 			play_hand_button.disabled = !cards_are_multi_and_same()
 	
+	if selected_3_energies():
+		play_hand_button.disabled = false
 	discard_button.disabled = selected_cards.is_empty()
 
 func cards_are_multi_and_same():

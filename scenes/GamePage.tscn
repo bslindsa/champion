@@ -1,6 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cby7cmef2ktf7"]
+[gd_scene load_steps=21 format=3 uid="uid://cby7cmef2ktf7"]
 
 [ext_resource type="Script" uid="uid://cb1rff2o2tw7" path="res://scenes/GamePage.gd" id="1_l4ls2"]
+[ext_resource type="Script" uid="uid://dvpeyq8pdki5n" path="res://cards/Card.gd" id="2_cgs03"]
+[ext_resource type="PackedScene" uid="uid://cd8iri7yfheoo" path="res://scenes/AttributesDialog.tscn" id="2_cn2iv"]
+[ext_resource type="PackedScene" uid="uid://jgb3tjribh4q" path="res://scenes/Deck.tscn" id="2_eq02q"]
+[ext_resource type="Script" uid="uid://dy1712xc1frlt" path="res://attributes/Attributes.gd" id="3_cvct5"]
+[ext_resource type="Resource" uid="uid://tcs81g5jsk6s" path="res://cards/Energy.tres" id="3_no3yn"]
+[ext_resource type="Resource" uid="uid://drksmnoojsxeg" path="res://attributes/Offensive/Balanced.tres" id="4_eq02q"]
+[ext_resource type="Resource" uid="uid://cifa4q3dd411p" path="res://attributes/Offensive/Forceful.tres" id="5_edcfr"]
+[ext_resource type="Resource" uid="uid://b3l0bc7pu0ysu" path="res://attributes/Offensive/Graceful.tres" id="6_cgs03"]
+[ext_resource type="Resource" uid="uid://copd5dabeyha6" path="res://attributes/Offensive/Powerful.tres" id="7_no3yn"]
+[ext_resource type="Resource" uid="uid://cu8gpr2dknk1h" path="res://attributes/Offensive/Swift.tres" id="8_dmwya"]
+[ext_resource type="Resource" uid="uid://btslp3it7ep6" path="res://attributes/Defensive/Enduring.tres" id="9_xoo87"]
+[ext_resource type="Resource" uid="uid://crprxpktqqu72" path="res://attributes/Defensive/Evasive.tres" id="10_fnh8k"]
+[ext_resource type="Resource" uid="uid://c2wcjw0tvakgh" path="res://attributes/Defensive/Perceptive.tres" id="11_d4ymw"]
+[ext_resource type="Resource" uid="uid://da6oghdd287di" path="res://attributes/Defensive/Protective.tres" id="12_dbq57"]
+[ext_resource type="Resource" uid="uid://csohc20oo8m3b" path="res://attributes/Defensive/Reactive.tres" id="13_j2p5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hu8l"]
 bg_color = Color(0.982682, 0.352394, 0.388964, 1)
@@ -21,6 +36,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l4ls2")
+MAX_HAND_SIZE = 5
+base_deck = Array[ExtResource("2_cgs03")]([ExtResource("3_no3yn"), ExtResource("3_no3yn"), ExtResource("3_no3yn"), ExtResource("3_no3yn"), ExtResource("3_no3yn")])
 
 [node name="OpponentField" type="Panel" parent="."]
 layout_mode = 1
@@ -123,14 +140,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Deck" type="Panel" parent="ChampionField"]
+[node name="DeckContainer" type="Panel" parent="ChampionField"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 194.0
 grow_vertical = 2
 
-[node name="DeckCount" type="Label" parent="ChampionField/Deck"]
+[node name="DeckCount" type="Label" parent="ChampionField/DeckContainer"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -140,6 +157,8 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 text = "0"
+
+[node name="Deck" parent="ChampionField/DeckContainer" instance=ExtResource("2_eq02q")]
 
 [node name="Discard" type="Panel" parent="ChampionField"]
 layout_mode = 1
@@ -151,3 +170,12 @@ offset_left = -194.46
 offset_right = -0.459961
 grow_horizontal = 0
 grow_vertical = 2
+
+[node name="AttributesDialog" parent="." instance=ExtResource("2_cn2iv")]
+z_index = 1
+layout_mode = 1
+off_attributes_data = Array[ExtResource("3_cvct5")]([ExtResource("4_eq02q"), ExtResource("5_edcfr"), ExtResource("6_cgs03"), ExtResource("7_no3yn"), ExtResource("8_dmwya")])
+def_attributes_data = Array[ExtResource("3_cvct5")]([ExtResource("9_xoo87"), ExtResource("10_fnh8k"), ExtResource("11_d4ymw"), ExtResource("12_dbq57"), ExtResource("13_j2p5u")])
+
+[connection signal="pressed" from="CenterField/VBoxContainer/PlayHandButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterField/VBoxContainer/DiscardButton" to="." method="_on_discard_button_pressed"]

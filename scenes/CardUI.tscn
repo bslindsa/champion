@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://oxo2pg75cs8l"]
+[gd_scene load_steps=11 format=3 uid="uid://oxo2pg75cs8l"]
 
 [ext_resource type="Script" uid="uid://c0flow411ni1p" path="res://scenes/CardUI.gd" id="1_068a4"]
-[ext_resource type="Resource" uid="uid://tcs81g5jsk6s" path="res://cards/Energy.tres" id="2_s2oda"]
 [ext_resource type="Texture2D" uid="uid://bnug6hwsa3w12" path="res://assets/elegant-marble-texture-stockcake.jpg" id="3_s2oda"]
 [ext_resource type="Texture2D" uid="uid://7m4pmcqv1ulm" path="res://assets/sword.png" id="4_xj2v5"]
 
@@ -54,7 +53,6 @@ anchors_preset = 0
 offset_right = 200.0
 offset_bottom = 260.0
 script = ExtResource("1_068a4")
-card_data = ExtResource("2_s2oda")
 
 [node name="CardBorder" type="Panel" parent="."]
 z_index = 1
