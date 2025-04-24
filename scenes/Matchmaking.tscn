@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://co1cmurqhlvfh"]
+[gd_scene load_steps=4 format=3 uid="uid://co1cmurqhlvfh"]
 
 [ext_resource type="Script" uid="uid://toofuthhess6" path="res://scenes/Matchmaking.gd" id="1_res1o"]
 [ext_resource type="Texture2D" uid="uid://cjnyth6gdg3c" path="res://assets/sword_spinner.png" id="2_tl1lc"]
-[ext_resource type="Script" uid="uid://dxvwduy8g64e6" path="res://scenes/WebSocketClient.gd" id="3_tl1lc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de70q"]
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Matchmaking" type="Control"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,9 +67,5 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(112.5, 112.5)
 texture = ExtResource("2_tl1lc")
-
-[node name="WebSocketClient" type="Node" parent="."]
-script = ExtResource("3_tl1lc")
-metadata/_custom_type_script = "uid://dxvwduy8g64e6"
 
 [connection signal="pressed" from="Panel/CancelButton" to="." method="_on_cancel_button_pressed"]

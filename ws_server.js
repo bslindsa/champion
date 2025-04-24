@@ -4,6 +4,14 @@ const { v4: uuidv4 } = require('uuid'); // for generating unique lobby IDs
 
 const wss = new WebSocket.Server({ port: 8080 });
 const lobbies = {}; // lobbyId: [ws, ws]
+const sendMatchReady = (lobbyId, playerIndex, socket) => {
+  socket.send(JSON.stringify({
+    type: "match_ready",
+    lobby_id: lobbyId,
+    player_index: playerIndex,
+  }));
+};
+
 
 wss.on('connection', (ws) => {
   ws.on('message', (message) => {
@@ -41,6 +49,11 @@ wss.on('connection', (ws) => {
         });
       }
     }
+
+    if (lobby.length === 2) {
+      sendMatchReady(msg.lobby_id, 0, lobby[0]);
+      sendMatchReady(msg.lobby_id, 1, lobby[1]);
+    }    
 
     ws.on('close', () => {
       if (ws.lobbyId && lobbies[ws.lobbyId]) {
